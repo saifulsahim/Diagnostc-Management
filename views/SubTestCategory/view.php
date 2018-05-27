@@ -37,11 +37,7 @@ $singleData=$obj->view();
 
     </tr>
 
-    <tr>
-
-        <th>Test Name</th>          <td>$singleData->category_name</td>
-
-    </tr>
+   
 
 
     <tr>
