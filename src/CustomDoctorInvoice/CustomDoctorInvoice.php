@@ -99,7 +99,8 @@ class CustomDoctorInvoice extends Database
                       INNER JOIN doctors ON patient_info.doctor_id = doctors.id 
                       
                       INNER JOIN sub_test_category ON payment_info.sub_test_id = sub_test_category.id 
-                      INNER JOIN add_admin ON payment_info.admin_id = add_admin.id ";
+                      INNER JOIN add_admin ON payment_info.admin_id = add_admin.id 
+                       WHERE patient_info.id= $this->id";
 
         $STH = $this->DBH->query($sqlQuery);
 

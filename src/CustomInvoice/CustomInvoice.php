@@ -101,12 +101,16 @@ class CustomInvoice extends Database
 
     public function view(){
 
+
+
+
         $sqlQuery = "  SELECT patient_info.id, patient_info.patient_name, patient_info.invoice_no, patient_info.invoice_type, patient_info.delivery_date, sub_test_category.test_name,payment_info.total, doctors.doctor_name, add_admin.admin_name FROM patient_info 
                       INNER JOIN payment_info ON payment_info.patient_id = patient_info.id 
                       INNER JOIN doctors ON patient_info.doctor_id = doctors.id 
                       
                       INNER JOIN sub_test_category ON payment_info.sub_test_id = sub_test_category.id 
-                      INNER JOIN add_admin ON payment_info.admin_id = add_admin.id ";
+                      INNER JOIN add_admin ON payment_info.admin_id = add_admin.id 
+                       WHERE patient_info.id= $this->id";
 
 
         $STH = $this->DBH->query($sqlQuery);
